@@ -54,4 +54,4 @@ jobs:
           app-name: 'B031bot'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4639678F9D44941A3327CDBB8294752 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E784BCE49EB94E0C89A98DDD0A3E4D8A }}
