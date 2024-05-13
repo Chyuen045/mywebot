@@ -12,8 +12,21 @@ public class LineService : ILineService
     {
         var result = null as List<ISendMessage>;
 
+        if (message.Contains("370Z"))
+        {
+            return  new List<ISendMessage>
+            {
+                new ImageMessage(originalContentUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
+                    ,previerImageUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
+                    ,quickReply:null),
+            };    
+        }
+
         result = new List<ISendMessage>
         {
+            new ImageMessage(originalContentUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
+                ,previerImageUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
+                ,quickReply:null),
             new TextMessage($"Receive a text event message \nchannelId={channelId}  \nuserId={userId}")
         };
         return result;
