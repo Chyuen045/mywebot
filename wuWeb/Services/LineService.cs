@@ -12,6 +12,7 @@ public class LineService : ILineService
     {
         var result = null as List<ISendMessage>;
 
+        /*
         if (message.Contains("370Z"))
         {
             return  new List<ISendMessage>
@@ -20,8 +21,23 @@ public class LineService : ILineService
                     ,previerImageUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
                     ,quickReply:null),
             };    
-        }
+        }*/
+        
+        string[] imageUrl = new string[]
+        {
+            "https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg",
+            "https://image.cache.u-car.com.tw/articleimage_1213121.jpg",
+            "https://www.carstuff.com.tw/media/k2/items/cache/c79b4f75742ca3f9e749cd0f1875b746_XL.jpg",
+        };
+        Random rnd = new Random( (int)DateTime.Now.TimeOfDay.TotalSeconds);
+        int index= rnd.Next(0, imageUrl.Length);
 
+
+        return  new List<ISendMessage>
+        {
+            new ImageMessage(originalContentUrl:imageUrl[index],imageUrl[index],previerImageUrl:null),
+        };
+        
         result = new List<ISendMessage>
         {
             new ImageMessage(originalContentUrl:"https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/Z/2024/nismo/side-view-of-nissan-z-nismo-in-grey.jpg"
