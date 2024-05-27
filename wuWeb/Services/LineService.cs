@@ -35,7 +35,7 @@ public class LineService : ILineService
 
         return  new List<ISendMessage>
         {
-            new ImageMessage(originalContentUrl:imageUrl[index],imageUrl[index],previerImageUrl:null),
+            new ImageMessage(imageUrl[index],imageUrl[index],null),
         };
         
         result = new List<ISendMessage>
